@@ -19,8 +19,22 @@ export const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
+  const updateCartItemCount = (newAmount, itemId) => {
+    if (isNaN(newAmount)) {
+      newAmount = 1;
+    }
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: newAmount,
+    }));
+  };
 
-  const contextValue = { cartItems, addToCart, removeFromCart };
+  const contextValue = {
+    cartItems,
+    addToCart,
+    removeFromCart,
+    updateCartItemCount,
+  };
   return (
     <ShopContext.Provider value={contextValue}>
       {props.children}
