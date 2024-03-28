@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ShopContext } from '../../context/shop-context';
 import { CartItem } from './cart-item';
 import { PRODUCTS } from '../../products';
-import './cart.css';
+import './cart.scss';
 
 export const Cart = () => {
   const navigate = useNavigate();
