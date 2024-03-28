@@ -19,15 +19,15 @@ export const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
-  const updateCartItemCount = (newAmount, itemId) => {
-    if (isNaN(newAmount)) {
-      newAmount = 1;
-    }
-    setCartItems((prev) => ({
-      ...prev,
-      [itemId]: newAmount,
-    }));
-  };
+  // const updateCartItemCount = (newAmount, itemId) => {
+  //   if (isNaN(newAmount)) {
+  //     newAmount = 1;
+  //   }
+  //   setCartItems((prev) => ({
+  //     ...prev,
+  //     [itemId]: newAmount,
+  //   }));
+  // };
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
@@ -45,7 +45,6 @@ export const ShopContextProvider = (props) => {
     cartItems,
     addToCart,
     removeFromCart,
-    updateCartItemCount,
     getTotalCartAmount,
   };
   return (
