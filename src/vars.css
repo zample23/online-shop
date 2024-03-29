@@ -3,12 +3,13 @@
 
   /* Fonts */
   --font-main: 'Quicksand', sans-serif;
-  --default-size: 16px;
+  --default-size: 22px;
 
   /* Colors */
-  --maincolor: rgb(0, 0, 0);
-  --secondcolor: rgb(125, 125, 125);
-  --thirdcolor: rgb(255, 255, 255);
+  --maincolor: #1034a6;
+  --maincolor-pale: #1033a64d;
+  --secondcolor: rgb(255, 255, 255);
+  --thirdcolor: rgb(125, 125, 125);
 
   /* Media */
   --laptop: 1200px;

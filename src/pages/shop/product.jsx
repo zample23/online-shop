@@ -6,18 +6,16 @@ export const Product = ({ id, productName, price, productImage }) => {
   const cartItemAmount = cartItems[id];
   return (
     <div className="product">
-      <img alt={productName} src={productImage} />
-      <div className="description">
-        <p>
-          <b>{productName}</b>
-        </p>
-        <p>${price}</p>
+      <img className="product__image" alt={productName} src={productImage} />
+      <div className="product__description">
+        <p className="product__name">{productName}</p>
+        <p className="product__price">${price}</p>
       </div>
       <button
-        className="addToCartBttn"
+        className="product__addToCartBttn"
         onClick={() => addToCart(addToCart(id))}
       >
-        Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
+        Add to cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
       </button>
     </div>
   );

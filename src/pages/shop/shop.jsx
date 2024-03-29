@@ -5,10 +5,10 @@ import './shop.scss';
 export const Shop = () => {
   return (
     <div className="shop">
-      <div className="shopTitle">
+      {/* <div className="shopTitle">
         <h1>Online shop</h1>
-      </div>
-      <div className="products">
+      </div> */}
+      <div className="shop__products">
         {PRODUCTS.map((product) => (
           <Product key={product.id} {...product} />
         ))}

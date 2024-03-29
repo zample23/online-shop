@@ -6,7 +6,7 @@ import './navbar.scss';
 export const Navbar = () => {
   return (
     <div className="navbar">
-      <div className="links">
+      <div className="navbar__links">
         <Link to="/">Shop</Link>
         <Link to="/cart">
           <ShoppingCart size={32} />

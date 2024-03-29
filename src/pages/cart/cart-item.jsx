@@ -8,12 +8,12 @@ export const CartItem = ({ id, productName, price, productImage }) => {
   return (
     <div className="cartItem">
       <img alt={productName} src={productImage} />
-      <div className="description">
+      <div className="cartItem__description">
         <p>
           <b> {productName} </b>
         </p>
         <p> ${price} </p>
-        <div className="countHandler">
+        <div className="cartItem__countHandler">
           <button onClick={() => removeFromCart(id)}> - </button>
           {/* <input
             value={cartItems[id]}

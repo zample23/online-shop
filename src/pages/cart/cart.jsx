@@ -11,10 +11,10 @@ export const Cart = () => {
   const totalAmount = getTotalCartAmount();
   return (
     <div className="cart">
-      <div>
-        <h1>Your Cart Items</h1>
-      </div>
-      <div className="cartItems">
+      {/* <div>
+        <h1 className="cart__title">Your Cart Items</h1>
+      </div> */}
+      <div className="cart__cartItems">
         {PRODUCTS.map((product) => {
           if (cartItems[product.id] !== 0) {
             return <CartItem key={product.id} {...product} />;
@@ -23,7 +23,7 @@ export const Cart = () => {
         })}
       </div>
       {totalAmount > 0 ? (
-        <div className="checkout">
+        <div className="cart__checkout">
           <p>
             <b>Subtotal: ${totalAmount}</b>
           </p>
