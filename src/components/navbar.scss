@@ -2,10 +2,14 @@
   height: 100px;
   display: flex;
   background-color: #1034a6;
+  overflow-x: hidden;
 }
 
 .navbar__link {
   flex: 0 0 50vw;
+  &:first-child {
+    border-right: 3px solid var(--secondcolor);
+  }
 }
 
 .navbar__link a {
@@ -19,7 +23,6 @@
   transition: background-color 0.15s ease-in, color 0.15s ease-in;
 
   &:hover {
-    // opacity: 0.8;
     background-color: var(--secondcolor);
     color: var(--maincolor);
   }

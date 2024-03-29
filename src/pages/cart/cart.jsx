@@ -24,14 +24,18 @@ export const Cart = () => {
       </div>
       {totalAmount > 0 ? (
         <div className="cart__checkout">
-          <p>
-            <b>Subtotal: ${totalAmount}</b>
+          <p className="cart__total">
+            Subtotal: <span>${totalAmount}</span>
           </p>
-          <button onClick={() => navigate('/')}>Continue Shopping</button>
-          <button>Checkout</button>
+          <div className="cart__buttons">
+            <button className="cart__button" onClick={() => navigate('/')}>
+              Continue Shopping
+            </button>
+            <button className="cart__button">Checkout</button>
+          </div>
         </div>
       ) : (
-        <h2>Your Cart is empty</h2>
+        <h2 className="cart__empty">Your Cart is empty</h2>
       )}
     </div>
   );

@@ -12,7 +12,7 @@
   --thirdcolor: rgb(125, 125, 125);
 
   /* Media */
-  --laptop: 1200px;
+  --laptop: 1024px;
   --tablet: 767px;
   --phone: 425px;
 }
