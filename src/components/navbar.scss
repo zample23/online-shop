@@ -1,26 +1,26 @@
 .navbar {
-  width: 100%;
   height: 100px;
+  display: flex;
   background-color: #1034a6;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
 
-.navbar__links {
-  margin-right: 50px;
-  display: flex;
-  gap: 30px;
-  align-items: center;
+.navbar__link {
+  flex: 0 0 50vw;
 }
 
-.navbar__links a {
+.navbar__link a {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: var(--secondcolor);
-  font-size: 25px;
-  transition: opacity 0.2s ease-in;
+  font-size: 32px;
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
 
   &:hover {
-    opacity: 0.8;
+    // opacity: 0.8;
+    background-color: var(--secondcolor);
+    color: var(--maincolor);
   }
 }
