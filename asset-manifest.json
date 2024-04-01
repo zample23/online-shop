@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/online-shop/static/css/main.754686a3.css",
+    "main.js": "/online-shop/static/js/main.a0d9b653.js",
+    "static/media/ps5.png": "/online-shop/static/media/ps5.375c665893045c64958f.png",
+    "static/media/air-pods.png": "/online-shop/static/media/air-pods.1a179fce936f33904ccd.png",
+    "static/media/hp-laptop.jpg": "/online-shop/static/media/hp-laptop.e09d1aef9e5f2194a263.jpg",
+    "static/media/monitor-BenQ-EX240N.webp": "/online-shop/static/media/monitor-BenQ-EX240N.569b0918f10a6b4f191a.webp",
+    "static/media/intel-core-i7.jpg": "/online-shop/static/media/intel-core-i7.9c4b21ec724aa8516f48.jpg",
+    "static/media/iphone-13-pro-max.jpg": "/online-shop/static/media/iphone-13-pro-max.8732e6d39eaaec1c2435.jpg",
+    "static/media/apple-ipad.webp": "/online-shop/static/media/apple-ipad.2d9ad6fcddafb6629757.webp",
+    "static/media/samsung-watch.avif": "/online-shop/static/media/samsung-watch.1513e0a01b2a278041ce.avif",
+    "index.html": "/online-shop/index.html",
+    "main.754686a3.css.map": "/online-shop/static/css/main.754686a3.css.map",
+    "main.a0d9b653.js.map": "/online-shop/static/js/main.a0d9b653.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.754686a3.css",
+    "static/js/main.a0d9b653.js"
+  ]
+}
