@@ -29,7 +29,10 @@ export const Cart = () => {
             Total price: <span>${totalAmount}</span>
           </p>
           <div className="cart__buttons">
-            <button className="cart__button" onClick={() => navigate('/')}>
+            <button
+              className="cart__button"
+              onClick={() => navigate('/online-shop')}
+            >
               Continue shopping
             </button>
             <button className="cart__button">Checkout</button>

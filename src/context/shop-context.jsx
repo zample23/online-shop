@@ -32,13 +32,23 @@ export const ShopContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
+  // const getTotalCartItems = () => {
+  //   let totalQuantity = 0;
+  //   Object.values(cartItems).forEach((quantity) => {
+  //     if (cartItems.hasOwnProperty(quantity) && !isNaN(cartItems[quantity])) {
+  //       totalQuantity += quantity;
+  //     }
+  //   });
+  //   return totalQuantity;
+  // };
+
   const getTotalCartItems = () => {
     let totalQuantity = 0;
-    Object.values(cartItems).forEach((quantity) => {
-      if (cartItems.hasOwnProperty(quantity) && !isNaN(cartItems[quantity])) {
-        totalQuantity += quantity;
+    for (const itemId in cartItems) {
+      if (cartItems.hasOwnProperty(itemId) && !isNaN(cartItems[itemId])) {
+        totalQuantity += cartItems[itemId];
       }
-    });
+    }
     return totalQuantity;
   };
 
