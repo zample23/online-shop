@@ -3,10 +3,10 @@ import { PRODUCTS } from '../products';
 export const ShopContext = createContext(null);
 
 const getInitialCart = () => {
-  let cart = {};
-  for (let i = 1; i < PRODUCTS.length + 1; i++) {
-    cart[i] = 0;
-  }
+  const cart = {};
+  PRODUCTS.forEach((product) => {
+    cart[product.id] = 0;
+  });
   return cart;
 };
 
@@ -19,22 +19,29 @@ export const ShopContextProvider = (props) => {
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
-  // const updateCartItemCount = (newAmount, itemId) => {
-  //   if (isNaN(newAmount)) {
-  //     newAmount = 1;
-  //   }
-  //   setCartItems((prev) => ({
-  //     ...prev,
-  //     [itemId]: newAmount,
-  //   }));
-  // };
-  const totalCartItems = () => {
-    let summary;
-    for (const item in cartItems) {
-      summary = cartItems[item];
-    }
-    return summary;
+
+  const getTotalCartItems = () => {
+    let totalQuantity = 0;
+    Object.values(cartItems).forEach((quantity) => {
+      if (!isNaN(cartItems[quantity])) {
+        totalQuantity += quantity;
+      }
+    });
+    return totalQuantity;
   };
+
+  // const getTotalCartItems = () => {
+  //   let totalItems = 0;
+  //   for (const item in cartItems) {
+  //     // console.log('Item ID:', item);
+  //     // console.log('Quantity:', cartItems[item]);
+  //     if (cartItems.hasOwnProperty(item) && !isNaN(cartItems[item])) {
+  //       totalItems += cartItems[item];
+  //     }
+  //   }
+  //   // console.log('Total Items:', totalItems);
+  //   return totalItems;
+  // };
 
   const getTotalCartAmount = () => {
     let totalAmount = 0;
@@ -54,7 +61,7 @@ export const ShopContextProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
-    totalCartItems,
+    getTotalCartItems,
   };
   return (
     <ShopContext.Provider value={contextValue}>

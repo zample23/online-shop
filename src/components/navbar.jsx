@@ -5,7 +5,7 @@ import { ShopContext } from '../context/shop-context';
 import './navbar.scss';
 
 export const Navbar = () => {
-  const { totalCartItems } = useContext(ShopContext);
+  const { getTotalCartItems } = useContext(ShopContext);
 
   return (
     <div className="navbar">
@@ -15,7 +15,7 @@ export const Navbar = () => {
       <div className="navbar__link">
         <Link to="/cart">
           <ShoppingCart size={40} />
-          {/* <span className="navbar__items-counter">{totalCartItems()}</span> */}
+          <span className="navbar__items-counter">{getTotalCartItems()}</span>
         </Link>
       </div>
     </div>
