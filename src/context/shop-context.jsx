@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { PRODUCTS } from '../products';
 export const ShopContext = createContext(null);
 
@@ -11,7 +11,19 @@ const getInitialCart = () => {
 };
 
 export const ShopContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState(getInitialCart());
+  const [cartItems, setCartItems] = useState(() => {
+    const objectFromStorage = JSON.parse(localStorage.getItem('cartItems'));
+    if (objectFromStorage.hasOwnProperty(undefined)) {
+      delete objectFromStorage.undefined;
+    }
+    return objectFromStorage ? objectFromStorage : getInitialCart();
+  });
+
+  // Placing to storage
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    // localStorage.setItem('cartItems', JSON.stringify(getInitialCart()));
+  }, [cartItems]);
 
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
@@ -23,7 +35,7 @@ export const ShopContextProvider = (props) => {
   const getTotalCartItems = () => {
     let totalQuantity = 0;
     Object.values(cartItems).forEach((quantity) => {
-      if (!isNaN(cartItems[quantity])) {
+      if (cartItems.hasOwnProperty(quantity) && !isNaN(cartItems[quantity])) {
         totalQuantity += quantity;
       }
     });
@@ -48,9 +60,9 @@ export const ShopContextProvider = (props) => {
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let neededProduct = PRODUCTS.find(
-          (product) => product.id === Number(item)
+          (product) => product?.id === Number(item)
         );
-        totalAmount += neededProduct.price * cartItems[item];
+        totalAmount += neededProduct?.price * cartItems[item];
       }
     }
     return totalAmount.toFixed(2);
