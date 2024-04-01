@@ -13,7 +13,7 @@ export const Navbar = () => {
         <Link to="/online-shop">Shop</Link>
       </div>
       <div className="navbar__link">
-        <Link to="/cart">
+        <Link to="/online-shop/cart">
           <ShoppingCart size={40} />
           <span className="navbar__items-counter">{getTotalCartItems()}</span>
         </Link>

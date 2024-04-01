@@ -13,7 +13,7 @@ const getInitialCart = () => {
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(() => {
     const objectFromStorage = JSON.parse(localStorage.getItem('cartItems'));
-    if (objectFromStorage.hasOwnProperty(undefined)) {
+    if (objectFromStorage && objectFromStorage.hasOwnProperty(undefined)) {
       delete objectFromStorage.undefined;
     }
     return objectFromStorage ? objectFromStorage : getInitialCart();
@@ -45,7 +45,10 @@ export const ShopContextProvider = (props) => {
   const getTotalCartItems = () => {
     let totalQuantity = 0;
     for (const itemId in cartItems) {
-      if (cartItems.hasOwnProperty(itemId) && !isNaN(cartItems[itemId])) {
+      if (
+        Object.prototype.hasOwnProperty.call(cartItems, itemId) &&
+        !isNaN(cartItems[itemId])
+      ) {
         totalQuantity += cartItems[itemId];
       }
     }
