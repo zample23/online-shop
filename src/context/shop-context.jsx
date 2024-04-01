@@ -29,12 +29,13 @@ export const ShopContextProvider = (props) => {
   //   }));
   // };
   const totalCartItems = () => {
-    // const values = Object.values(cartItems);
-    // const summary = values.reduce((acc, curr) => acc + curr, 0);
-    // console.log(values);
-    // console.log(summary);
-    // return summary;
+    let summary;
+    for (const item in cartItems) {
+      summary = cartItems[item];
+    }
+    return summary;
   };
+
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {

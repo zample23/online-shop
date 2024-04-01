@@ -15,7 +15,7 @@ export const Navbar = () => {
       <div className="navbar__link">
         <Link to="/cart">
           <ShoppingCart size={40} />
-          {/* <span>{totalCartItems()}</span> */}
+          {/* <span className="navbar__items-counter">{totalCartItems()}</span> */}
         </Link>
       </div>
     </div>
